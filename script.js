@@ -15,6 +15,7 @@ function findHighest(frequency){
 
 function outputFrequencyTable(){
     outputDiv.innerHTML = "";
+    outputDiv.innerText = "Top 5 most frequent words are: ";
     var firstDiv = document.createElement("div");
     firstDiv.textContent = frequency_table.word1+ ":" +frequency_table.number1;
     outputDiv.appendChild(firstDiv);
@@ -53,14 +54,15 @@ textArea.id = "inputText";
 textArea.placeholder = "Input text: ";
 rootDiv.appendChild(textArea);
 
-var outputDiv = document.createElement("div");
-output.id = "frequency_table";
-rootDiv.appendChild(outputDiv);
-
 var submitButton = document.createElement("button");
 submitButton.id = "submitButton";
 submitButton.textContent = "Submit";
 
+var outputDiv = document.createElement("div");
+outputDiv.id = "output_frequency_table";
+outputDiv.style.color = 'blue';
+outputDiv.style.marginLeft = 'auto';
+rootDiv.appendChild(outputDiv);
 
 submitButton.addEventListener("click", function()
 {
@@ -138,7 +140,7 @@ submitButton.addEventListener("click", function()
 
     console.log(frequency_table);
     
-    
+    outputFrequencyTable();
 
 });
 
