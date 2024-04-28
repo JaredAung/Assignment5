@@ -12,6 +12,29 @@ function findHighest(frequency){
     }
     return highestIndex;
 }
+
+function outputFrequencyTable(){
+    outputDiv.innerHTML = "";
+    var firstDiv = document.createElement("div");
+    firstDiv.textContent = frequency_table.word1+ ":" +frequency_table.number1;
+    outputDiv.appendChild(firstDiv);
+    
+    var secondDiv = document.createElement("div");
+    secondDiv.textContent = frequency_table.word2 + ":" + frequency_table.number2;
+    outputDiv.appendChild(secondDiv);
+
+    var thirdDiv = document.createElement("div");
+    thirdDiv.textContent = frequency_table.word3 + ":" + frequency_table.number3;
+    outputDiv.appendChild(thirdDiv);
+
+    var fourthDiv = document.createElement("div");
+    fourthDiv.textContent = frequency_table.word4 + ":" + frequency_table.number4;
+    outputDiv.appendChild(fourthDiv);
+
+    var fifthDiv = document.createElement("div");
+    fifthDiv.textContent = frequency_table.word5 + ":" + frequency_table.number5;
+    outputDiv.appendChild(fifthDiv);
+}
 const frequency_table= {
     word1: " ",
     word2:" ",
@@ -30,9 +53,15 @@ textArea.id = "inputText";
 textArea.placeholder = "Input text: ";
 rootDiv.appendChild(textArea);
 
+var outputDiv = document.createElement("div");
+output.id = "frequency_table";
+rootDiv.appendChild(outputDiv);
+
 var submitButton = document.createElement("button");
 submitButton.id = "submitButton";
 submitButton.textContent = "Submit";
+
+
 submitButton.addEventListener("click", function()
 {
     var text = textArea.value;
@@ -115,4 +144,5 @@ submitButton.addEventListener("click", function()
 
 
 rootDiv.appendChild(submitButton);
+
 document.body.appendChild(rootDiv);
